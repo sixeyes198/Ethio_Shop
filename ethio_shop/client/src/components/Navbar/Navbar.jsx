@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
+import { IoCartOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,11 +14,14 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="sm:px-8 px-4 py-2 z-10 w-full">
+      <header className="sm:px-8 px-4 py-2 z-10 w-full bg-[#fbbf24]">
         <nav className="flex justify-between items-center max-container">
-          <a href="/" className="text-3xl font-bold">
-            Logo
-          </a>
+          <img
+            src="src\components\assets\Ethio-removebg-preview.png"
+            className="w-20 h-20"
+            alt="logo"
+          />
+
           <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
             {navLinks.map((item) => (
               <li key={item.label}>
@@ -31,9 +35,12 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="flex gap-2 text-lg leading-normal font-medium font-montserrat max-lg:hidden wide:mr-24">
-            <a href="/">Sign in</a>
-            <span>/</span>
-            <a href="/">Explore now</a>
+            <a href="/" className="rounded-md shadow-md bg-white py-2 px-3">
+              Sign in
+            </a>
+            <a href="/">
+              <IoCartOutline className="text-3xl" />
+            </a>
           </div>
           <div
             className="hidden max-lg:block cursor-pointer"
@@ -56,7 +63,7 @@ const Navbar = () => {
             >
               <AiOutlineClose className="text-4xl" />
             </div>
-            <ul className=" lg:hidden flex flex-col items-center justify-center h-full ">
+            <ul className=" lg:hidden flex flex-col items-center justify-center h-full border-2 ">
               {navLinks.map((item) => (
                 <li key={item.label}>
                   <a

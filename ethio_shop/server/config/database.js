@@ -3,10 +3,10 @@ import knex from "knex";
 export const db = knex({
   client: "pg",
   connection: {
-    host: "localhost",
+    host: "cornelius.db.elephantsql.com",
     port: 5432,
-    user: "postgres",
-    database: "postgres",
-    password: "yossi",
+    user: "vqirqwyp",
+    database: "vqirqwyp",
+    password: "rwnxctepYs7I9kxvGbLZUyVxCcNYgg3v",
   },
 });

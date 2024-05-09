@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import router from "./routes/UserRouters.js";
 const app = express();
+const path = require("path");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -12,6 +13,14 @@ app.listen(process.env.PORT || 3000, () => {
 });
 
 app.use(router);
+
+// have Node serve the files for our built React app
+app.use(express.static(path.join(__dirname, "client/build")));
+
+// all other GET requests not handled before will return our React app
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
 
 // app.get("/api", (req, res) => {
 //   res.json({ Backend: "this gonna be my back-end" });

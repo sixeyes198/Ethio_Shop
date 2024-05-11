@@ -29,7 +29,7 @@ const ProductDetail = (props) => {
           onClick={() => goToCart()}
           className="btn-buy-now bg-black text-white py-2 px-4 rounded"
         >
-          Buy Now
+          Add to Cart
         </button>
       </div>
     </section>

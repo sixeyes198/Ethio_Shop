@@ -3,10 +3,16 @@ import knex from "knex";
 export const db = knex({
   client: "pg",
   connection: {
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    user: process.env.DB_USER,
-    database: process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
+    host: "cornelius.db.elephantsql.com",
+    port: "5432",
+    user: "vqirqwyp",
+    database: "vqirqwyp",
+    password: "rwnxctepYs7I9kxvGbLZUyVxCcNYgg3v",
   },
 });
+
+// DB_HOST= cornelius.db.elephantsql.com
+// DB_PORT= 5432
+// DB_USER= vqirqwyp
+// DB_NAME= vqirqwyp
+// DB_PASSWORD= rwnxctepYs7I9kxvGbLZUyVxCcNYgg3v

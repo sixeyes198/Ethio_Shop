@@ -3,7 +3,7 @@ import cors from "cors";
 import router from "./routes/UserRouters.js";
 const app = express();
 
-// import path from "path";
+import path from "path";
 // import { fileURLToPath } from "url";
 
 app.use(express.urlencoded({ extended: true }));

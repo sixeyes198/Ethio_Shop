@@ -22,16 +22,13 @@ function Register({ onClose }) {
       email,
     };
 
-    const response = await fetch(
-      "https://ethio-shop.onrender.com:10000/register",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    );
+    const response = await fetch("http://localhost:3000/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
     const data = await response.json();
 

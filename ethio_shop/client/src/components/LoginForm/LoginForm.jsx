@@ -11,16 +11,13 @@ function LoginForm({ onClose, onSwitchToRegister }) {
   // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await fetch(
-      "https://ethio-shop.onrender.com:10000/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      }
-    );
+    const response = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    });
 
     const data = await response.json();
 
